@@ -19,7 +19,14 @@ function walker(node, parameters) {
 
     if (node.type === 'tag') {
 
-      if (node.name === 'strong') {
+      if (node.name === 'a') {
+        parameters.attributes.push({
+          type: Ti.UI.iOS.ATTRIBUTE_LINK,
+          value: node.attributes.href,
+          range: [offset, length]
+        });
+
+      } else if (node.name === 'strong') {
         parameters.attributes.push({
           type: Ti.UI.iOS.ATTRIBUTE_FONT,
           value: {
