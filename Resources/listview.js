@@ -6,7 +6,7 @@ var win = Ti.UI.createWindow({
 });
 
 html2as(
-  'Hello <b>Bold</b> World', function(err, as) {
+  '<font size="17">Hello <b>Bold</b> World</font>', function(err, as) {
 
     if (err) {
       console.error(err);
@@ -26,7 +26,7 @@ html2as(
         sections: [Ti.UI.createListSection({
           items: [{
             label: {
-              attr: as
+              attributedString: as
             }
           }]
         })]

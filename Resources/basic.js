@@ -36,7 +36,6 @@ html2as(
       var label = Titanium.UI.createLabel({
         left: 20,
         right: 20,
-        height: Titanium.UI.SIZE,
         attributedString: as
       });
 
