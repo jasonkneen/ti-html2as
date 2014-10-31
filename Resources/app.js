@@ -19,7 +19,7 @@ html2as('hiero <strong color="red">vet</strong> en daaro <u>underline</u> en <fo
     });
 
     label.addEventListener('link', function(e) {
-      Ti.API.info(JSON.stringify(e));
+      alert('Longtap on: ' + e.url);
     });
 
     win.add(label);
