@@ -1,1 +1,4 @@
-build
+*.zip
+node_modules
+example/build
+example/modules
