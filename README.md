@@ -51,7 +51,7 @@ grunt
 
 ## Issues
 
-Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/html2as/issues).
+Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/ti-html2as/issues).
 
 
 Credits
