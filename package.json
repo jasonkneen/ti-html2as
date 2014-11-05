@@ -2,7 +2,7 @@
   "name": "ti-html2as",
   "moduleid": "nl.fokkezb.html2as",
   "guid": "5be532b5-9e73-4515-bd8e-5472b0bf52f2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "HTML to Attributed String parser for Titanium",
   "author": {
     "name": "Fokke Zandbergen",
