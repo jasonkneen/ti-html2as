@@ -4568,7 +4568,7 @@ FeedHandler.prototype.onend = function(){
 				addConditionally(entry, "id", "id", item);
 				addConditionally(entry, "title", "title", item);
 				if((tmp = getOneElement("link", item)) && (tmp = tmp.attribs) && (tmp = tmp.href)) entry.link = tmp;
-				addConditionally(entry, "description", "summary", item);
+				if((tmp = fetch("summary", item) || fetch("content", item))) entry.description = tmp;
 				if((tmp = fetch("updated", item))) entry.pubDate = new Date(tmp);
 				return entry;
 			});
@@ -4736,7 +4736,7 @@ Parser.prototype._updatePosition = function(initialOffset){
 		}
 	}
 	else this.startIndex = this.endIndex + 1;
-	this.endIndex = this._tokenizer._index;
+	this.endIndex = this._tokenizer.getAbsoluteIndex();
 };
 
 //Tokenizer event handlers
@@ -4925,6 +4925,8 @@ Parser.prototype.reset = function(){
 	this._attribname = "";
 	this._attribs = null;
 	this._stack = [];
+
+	if(this._cbs.onparserinit) this._cbs.onparserinit(this);
 };
 
 //Parses a complete HTML document and pushes it to the handler
@@ -5158,6 +5160,7 @@ function Tokenizer(options, cbs){
 	this._buffer = "";
 	this._sectionStart = 0;
 	this._index = 0;
+	this._bufferOffset = 0; //chars removed from _buffer
 	this._baseState = TEXT;
 	this._special = SPECIAL_NONE;
 	this._cbs = cbs;
@@ -5620,6 +5623,7 @@ Tokenizer.prototype._cleanup = function (){
 	if(this._sectionStart < 0){
 		this._buffer = "";
 		this._index = 0;
+		this._bufferOffset += this._index;
 	} else if(this._running){
 		if(this._state === TEXT){
 			if(this._sectionStart !== this._index){
@@ -5627,14 +5631,17 @@ Tokenizer.prototype._cleanup = function (){
 			}
 			this._buffer = "";
 			this._index = 0;
+			this._bufferOffset += this._index;
 		} else if(this._sectionStart === this._index){
 			//the section just started
 			this._buffer = "";
 			this._index = 0;
+			this._bufferOffset += this._index;
 		} else {
 			//remove everything unnecessary
 			this._buffer = this._buffer.substr(this._sectionStart);
 			this._index -= this._sectionStart;
+			this._bufferOffset += this._sectionStart;
 		}
 
 		this._sectionStart = 0;
@@ -5901,6 +5908,10 @@ Tokenizer.prototype.reset = function(){
 	Tokenizer.call(this, {xmlMode: this._xmlMode, decodeEntities: this._decodeEntities}, this._cbs);
 };
 
+Tokenizer.prototype.getAbsoluteIndex = function(){
+	return this._bufferOffset + this._index;
+};
+
 Tokenizer.prototype._getSection = function(){
 	return this._buffer.substring(this._sectionStart, this._index);
 };
@@ -6047,11 +6058,17 @@ function DomHandler(callback, options, elementCB){
 	this.dom = [];
 	this._done = false;
 	this._tagStack = [];
+	this._parser = this._parser || null;
 }
 
 //default options
 var defaultOpts = {
-	normalizeWhitespace: false //Replace all whitespace with single spaces
+	normalizeWhitespace: false, //Replace all whitespace with single spaces
+	withStartIndices: false, //Add startIndex properties to nodes
+};
+
+DomHandler.prototype.onparserinit = function(parser){
+	this._parser = parser;
 };
 
 //Resets the handler back to starting state
@@ -6063,6 +6080,7 @@ DomHandler.prototype.onreset = function(){
 DomHandler.prototype.onend = function(){
 	if(this._done) return;
 	this._done = true;
+	this._parser = null;
 	this._handleCallback(null);
 };
 
@@ -6087,6 +6105,10 @@ DomHandler.prototype._addDomElement = function(element){
 	var previousSibling = siblings[siblings.length - 1];
 
 	element.next = null;
+
+	if(this._options.withStartIndices){
+		element.startIndex = this._parser.startIndex;
+	}
 
 	if (this._options.withDomLvl1) {
 		element.__proto__ = element.type === "tag" ? ElementPrototype : NodePrototype;
