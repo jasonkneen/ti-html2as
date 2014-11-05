@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 1.0.0
 description: HTML to Attributed String parser for Titanium
 author: Fokke Zandbergen <mail@fokkezb.nl> (http://fokkezb.nl)
 license: LGPL-2.1
