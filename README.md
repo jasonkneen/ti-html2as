@@ -41,6 +41,18 @@ html2as(
 );
 ```
 
+### Alloy
+
+In Alloy you can use the [XP.UI](https://github.com/FokkeZB/UTiL/tree/master/xp.ui#tag-label) CommonJS module to emulate the `html` attribute Android has for `<Label />`:
+
+```
+<Alloy>
+	<Window>
+		<Label module="xp.ui" html="<font size=17>Hello <b>Bold</b> <font color=#FF0000>World!</font></font>" />
+	</Window>
+</Alloy> 
+```
+
 ## Example
 The [example](example) folder includes a Titanium project demonstrating the module. To build the module and then run the example project use the included grunt tasks:
 
