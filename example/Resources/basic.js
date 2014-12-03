@@ -22,6 +22,7 @@ html2as(
   '<font color="red">font:color</font>\n' +
   '<font face="AmericanTypewriter" size="8" color="red">font:face+size+color</font>\n' +
   '<a href="test.html">a:href</a> (longtap)\n' +
+  'and character entities: &amp; &copy;' +
   '\nNon-standard attributes:\n\n' +
   '<effect>effect</effect>\n' +
   '<kern value="10">kern:value</kern>\n' +
