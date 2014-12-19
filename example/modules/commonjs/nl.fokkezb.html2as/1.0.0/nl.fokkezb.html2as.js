@@ -5,7 +5,7 @@ var entities = _dereq_("entities");
 function walker(node, parameters, outerFont) {
 
   if (node.type === 'text') {
-    parameters.text += node.data;
+    parameters.text += entities.decodeHTML(node.data);
 
   } else if (node.type === 'tag' && node.children) {
     var innerFont;
@@ -133,7 +133,6 @@ module.exports = function(html, callback) {
         attributes: []
       });
 
-      parameters.text = entities.decodeHTML(parameters.text);
       // console.log(parameters);
 
       var attr = Titanium.UI.iOS.createAttributedString(parameters);
