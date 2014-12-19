@@ -28,10 +28,12 @@
     "string"
   ],
   "browser": {
-    "htmlparser2": "htmlparser2"
+    "htmlparser2": "htmlparser2",
+    "entities": "entities"
   },
   "dependencies": {
-    "htmlparser2": "~3.8.0"
+    "htmlparser2": "~3.8.0",
+    "entities": "~1.1.1"
   },
   "devDependencies": {
     "grunt-contrib-clean": "~0.6.0",
