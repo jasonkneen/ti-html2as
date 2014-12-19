@@ -1,4 +1,5 @@
 var htmlparser = require("htmlparser2");
+var entities = require("entities");
 
 function walker(node, parameters, outerFont) {
 
@@ -131,6 +132,7 @@ module.exports = function(html, callback) {
         attributes: []
       });
 
+      parameters.text = entities.decodeHTML(parameters.text);
       // console.log(parameters);
 
       var attr = Titanium.UI.iOS.createAttributedString(parameters);
