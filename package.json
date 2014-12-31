@@ -27,9 +27,6 @@
     "attributed",
     "string"
   ],
-  "browser": {
-    "htmlparser2": "htmlparser2"
-  },
   "dependencies": {
     "htmlparser2": "~3.8.0"
   },
