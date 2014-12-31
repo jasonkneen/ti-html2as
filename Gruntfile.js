@@ -14,9 +14,8 @@ module.exports = function(grunt) {
 
     titaniumifier: {
       module: {
-        options: {
-          as: "nl.fokkezb.html2as"
-        }
+        src: '.',
+        dest: '.'
       }
     },
 
