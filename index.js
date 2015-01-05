@@ -1,9 +1,10 @@
 var htmlparser = require("htmlparser2");
+var entities = require("entities");
 
 function walker(node, parameters, outerFont) {
 
   if (node.type === 'text') {
-    parameters.text += node.data;
+    parameters.text += entities.decodeHTML(node.data);
 
   } else if (node.type === 'tag' && node.children) {
     var innerFont;
