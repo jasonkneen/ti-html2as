@@ -1,5 +1,4 @@
-HTML to Attributed String
-=========================
+# HTML to Attributed String
 
 [![Dependencies](https://david-dm.org/fokkezb/ti-html2as/status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=dependencies)
 [![Dev Dependencies](https://david-dm.org/fokkezb/ti-html2as/dev-status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=devDependencies)
@@ -61,20 +60,25 @@ npm install
 grunt
 ```
 
+## Changelog
+
+* 1.2.0: Adds [support for HTML entities](https://github.com/FokkeZB/ti-html2as/pull/5)
+* 1.1.0: Updated for Titaniumifier 1.0.0
+* 1.0.0: Initial version
+
 ## Issues
 
 Please report issues and features requests in the repo's [issue tracker](https://github.com/fokkezb/ti-html2as/issues).
 
 
-Credits
--------
+## Credits
 
+* [@patrickknaap](https://github.com/patrickknaap) for adding support of HTML entities
 * [@fb55](https://github.com/fb55) for [htmlparser2](https://github.com/fb55/htmlparser2)
 * [@smclab](https://github.com/smclab/titaniumifier) for [titaniumifier](https://github.com/smclab/titaniumifier)
 
 
-License
--------
+## License
 
 This library, *ti-html2as*, is free software ("Licensed Software"); you can
 redistribute it and/or modify it under the terms of the [GNU Lesser General
