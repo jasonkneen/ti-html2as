@@ -1,6 +1,6 @@
 {
   "name": "ti-html2as",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "HTML to Attributed String parser for Titanium",
   "titaniumManifest": {
     "guid": "5be532b5-9e73-4515-bd8e-5472b0bf52f2",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "grunt-contrib-clean": "^0.6.0",
     "grunt-titanium": "^0.3.1",
-    "grunt-titaniumifier": "^1.0.0",
+    "grunt-titaniumifier": "^1.0.0-beta",
     "grunt-zip": "^0.16.0",
     "grunt": "^0.4.2"
   }

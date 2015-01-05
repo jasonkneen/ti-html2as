@@ -1,10 +1,10 @@
-version: 1.0.0
+version: 1.1.0
 description: HTML to Attributed String parser for Titanium
 author: Fokke Zandbergen <mail@fokkezb.nl> (http://fokkezb.nl)
 license: LGPL-2.1
-copyright: Copyright © 2014 Fokke Zandbergen
-name: nl.fokkezb.html2as
+copyright: Copyright © 2015 Fokke Zandbergen
+name: ti-html2as
 moduleid: nl.fokkezb.html2as
 guid: 5be532b5-9e73-4515-bd8e-5472b0bf52f2
 platform: commonjs
-minsdk: 3.2.0.GA
+minsdk: 3.3.0.GA
