@@ -52,6 +52,16 @@ In Alloy you can use the [XP.UI](https://github.com/FokkeZB/UTiL/tree/master/xp.
 </Alloy> 
 ```
 
+Or you can use the [Widget](https://github.com/FokkeZB/nl.fokkezb.html2as.widget), which has the advantage that you can set the `html` property in a later stage as well:
+
+```
+<Alloy>
+	<Window>
+		<Widget src="nl.fokkezb.html2as.widget" html="<font size=17>Hello <b>Bold</b> <font color=#FF0000>World!</font></font>" />
+	</Window>
+</Alloy> 
+```
+
 ## Example
 The [example](example) folder includes a Titanium project demonstrating the module. To build the module and then run the example project use the included grunt tasks:
 
