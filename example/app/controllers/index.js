@@ -1,16 +1,6 @@
 var html2as = require('nl.fokkezb.html2as');
 
-var win = Ti.UI.createWindow({
-  title: 'Basic',
-  backgroundColor: 'white'
-});
-
-var view = Ti.UI.createScrollView({
-  width: Ti.UI.FILL,
-  height: Ti.UI.SIZE
-});
-
-win.add(view);
+$.index.open();
 
 html2as(
   '<font size="20">\n' +
@@ -28,34 +18,33 @@ html2as(
   '<effect>effect</effect>\n' +
   '<kern value="10">kern:value</kern>\n' +
   '<expansion value="0.5">expansion:value</expansion>\n' +
-  '</font>', function(err, as) {
+  '</font>',
+  function(err, as) {
 
     if (err) {
       console.error(err);
 
     } else {
-
-      var label = Titanium.UI.createLabel({
-        left: 20,
-        right: 20,
-        attributedString: as
-      });
-
-      label.addEventListener('link', function(e) {
-        alert('Longtap on link to: ' + e.url);
-      });
-
-      view.add(label);
-
+      $.basicLabel.attributedString = as;
     }
-
   });
 
-win.open();
+html2as(
+  '<font size="17">Hello <font color=red>Red</font> World</font>',
+  function(err, as) {
 
-var tab = Ti.UI.createTab({
-  title: 'Basic',
-  window: win
-});
+    if (err) {
+      console.error(err);
 
-module.exports = tab;
+    } else {
+      $.listViewSection.setItems([{
+        label: {
+          attributedString: as
+        }
+      }]);
+    }
+  });
+
+function onLink(e) {
+  alert('Longtap on link to: ' + e.url);
+}

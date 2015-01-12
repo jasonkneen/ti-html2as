@@ -1,0 +1,16 @@
+{
+	"id": "nl.fokkezb.html2as.widget",
+	"name": "HTML 2 Attributed String Widget",
+	"description" : "Widget wrapping the HTML 2 Attributed String module, providing cross-platform HTML attribute for labels.",
+	"author": "Fokke Zandbergen",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2015 Fokke Zandbergen",
+	"license":"MIT",
+	"min-alloy-version": "1.5",
+	"min-titanium-version":"3.4",
+	"tags":"attributed strings, html",
+	"platforms":"ios",
+	"modules": {
+		"nl.fokkezb.html2as": "*"
+	}
+}

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
 	<id>nl.fokkezb.html2as</id>
 	<name>ti-html2as</name>
 	<version>1.0</version>
@@ -49,4 +48,6 @@
 		<target device="mobileweb">false</target>
 	</deployment-targets>
 	<sdk-version>3.5.0.RC</sdk-version>
+<plugins><plugin version="1.0">ti.alloy</plugin>
+</plugins>
 </ti:app>

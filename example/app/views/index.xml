@@ -1,0 +1,33 @@
+<Alloy>
+	<TabGroup>
+    <Tab title="Basic">
+      <Window title="Basic">
+        <ScrollView>
+          <Label id="basicLabel" onLink="onLink" />
+        </ScrollView>
+      </Window>
+    </Tab>
+    <Tab title="ListView">
+      <Window title="ListView">
+        <ListView defaultItemTemplate="default">
+          <Templates>
+            <ItemTemplate name="default">
+              <Label bindId="label" />
+            </ItemTemplate>
+          </Templates>
+          <ListSection id="listViewSection" />
+        </ListView>
+      </Window>
+    </Tab>
+    <Tab title="Module">
+      <Window title="Module">
+        <Label module="xp.ui" html="<font size=17>Hello <font color=red>Red</font> World</font>" onLink="onLink" />
+      </Window>
+    </Tab>
+    <Tab title="Widget">
+      <Window title="Widget">
+        <Widget src="nl.fokkezb.html2as.widget" html="<font size=17>Hello <font color=red>Red</font> <a href='http://google.com'>World</a></font>" onLink="onLink" />
+      </Window>
+    </Tab>
+	</TabGroup>
+</Alloy>
