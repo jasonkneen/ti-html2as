@@ -63,7 +63,7 @@ function walker(node, parameters, outerFont) {
           range: [offset, length]
         });
 
-      } else if (node.name === 'i') {
+      } else if (node.name === 'i' || node.name === 'em') {
         parameters.attributes.unshift({
           type: Ti.UI.iOS.ATTRIBUTE_OBLIQUENESS,
           value: 0.25,
