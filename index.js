@@ -63,6 +63,13 @@ function walker(node, parameters, outerFont) {
           range: [offset, length]
         });
 
+      } else if (node.name === 'i') {
+        parameters.attributes.unshift({
+          type: Ti.UI.iOS.ATTRIBUTE_OBLIQUENESS,
+          value: 0.25,
+          range: [offset, length]
+        });
+
       } else if (node.name === 'strike' || node.name === 'del' || node.name === 's') {
         parameters.attributes.unshift({
           type: Ti.UI.iOS.ATTRIBUTE_STRIKETHROUGH_STYLE,
