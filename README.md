@@ -62,6 +62,23 @@ Or you can use the [Widget](https://github.com/FokkeZB/nl.fokkezb.html2as.widget
 </Alloy> 
 ```
 
+## Supported tags and attributes
+
+Standard (old) HTML:
+
+* `<strong>`, `<b>`
+* `<u>`
+* `<em>`, `<i>`
+* `<strike>`, `<del>`, `<s>`
+* `<font face="Arial" size="12" color="red">`
+* `<a href="http://appcelerator.com">`
+
+Non-standard: 
+
+* `<effect>` (letterpress-style)
+* `<kern value="10">` (spacing between characters)
+* `<expansion value="0.5">` (stretch text horizontally)
+
 ## Example
 The [example](example) folder includes a Titanium project demonstrating the module. To build the module and then run the example project use the included grunt tasks:
 
