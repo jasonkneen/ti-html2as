@@ -10,7 +10,9 @@ HTML to [Ti.UI.iOS.AttributedString](http://docs.appcelerator.com/titanium/lates
 ![screencast](screencast.gif)
 
 ## Usage
-A packaged *CommonJS* module can be found via [Releases](https://github.com/fokkezb/ti-html2as/releases).
+A packaged *CommonJS* module can be found via [Releases](https://github.com/fokkezb/ti-html2as/releases). Follow the guide on [Using a Module](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module) or use gitTio:
+
+	gittio install nl.fokkezb.html2as
 
 The module exports a single function that takes an HTML string and a callback to receive an error or [Ti.UI.iOS.AttributedString](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.iOS.AttributedString) object.
 
