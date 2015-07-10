@@ -146,6 +146,9 @@ module.exports = function(html, callback) {
       callback(null, attr);
     }
   }));
+  
+  // remove newlines
+  html = html.replace(/[\r\n]+/gm, ' ').replace(/\s+/g, ' ');
 
   parser.parseComplete(html);
 
