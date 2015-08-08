@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-titanium": "^0.3.1",
+    "grunt-titanium": "fokkezb/grunt-titanium#patch-3",
     "grunt-titaniumifier": "^1.0.0-beta",
     "grunt-zip": "^0.16.0",
     "grunt": "^0.4.2"

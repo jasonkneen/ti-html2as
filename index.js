@@ -1,6 +1,8 @@
 var htmlparser = require("htmlparser2");
 var entities = require("entities");
 
+var ns = Ti.UI.createAttributedString ? Ti.UI : Ti.UI.iOS;
+
 function walker(node, parameters, outerFont) {
 
   if (node.type === 'text') {
@@ -51,56 +53,56 @@ function walker(node, parameters, outerFont) {
 
       if (node.name === 'a' && node.attribs && node.attribs.href) {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_LINK,
+          type: ns.ATTRIBUTE_LINK,
           value: node.attribs.href,
           range: [offset, length]
         });
 
       } else if (node.name === 'u') {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_UNDERLINES_STYLE,
-          value: Ti.UI.iOS.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+          type: ns.ATTRIBUTE_UNDERLINES_STYLE,
+          value: ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
           range: [offset, length]
         });
 
       } else if (node.name === 'i' || node.name === 'em') {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_OBLIQUENESS,
+          type: ns.ATTRIBUTE_OBLIQUENESS,
           value: 0.25,
           range: [offset, length]
         });
 
       } else if (node.name === 'strike' || node.name === 'del' || node.name === 's') {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_STRIKETHROUGH_STYLE,
-          value: Ti.UI.iOS.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+          type: ns.ATTRIBUTE_STRIKETHROUGH_STYLE,
+          value: ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
           range: [offset, length]
         });
 
       } else if (node.name === 'effect') {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_TEXT_EFFECT,
-          value: Ti.UI.iOS.ATTRIBUTE_LETTERPRESS_STYLE,
+          type: ns.ATTRIBUTE_TEXT_EFFECT,
+          value: ns.ATTRIBUTE_LETTERPRESS_STYLE,
           range: [offset, length]
         });
 
       } else if (node.name === 'kern' && node.attribs && node.attribs.value) {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_KERN,
+          type: ns.ATTRIBUTE_KERN,
           value: node.attribs.value,
           range: [offset, length]
         });
 
       } else if (node.name === 'expansion' && node.attribs && node.attribs.value) {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_EXPANSION,
+          type: ns.ATTRIBUTE_EXPANSION,
           value: node.attribs.value,
           range: [offset, length]
         });
 
       } else if (node.name === 'font' && node.attribs && node.attribs.color) {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_FOREGROUND_COLOR,
+          type: ns.ATTRIBUTE_FOREGROUND_COLOR,
           value: node.attribs.color,
           range: [offset, length]
         });
@@ -109,7 +111,7 @@ function walker(node, parameters, outerFont) {
       // if we have a font to set
       if (innerFont) {
         parameters.attributes.unshift({
-          type: Ti.UI.iOS.ATTRIBUTE_FONT,
+          type: ns.ATTRIBUTE_FONT,
           value: innerFont,
           range: [offset, length]
         });
@@ -129,8 +131,6 @@ module.exports = function(html, callback) {
 
     } else {
 
-      // console.debug(dom);
-
       var parameters = walker({
         type: 'tag',
         children: dom
@@ -139,9 +139,7 @@ module.exports = function(html, callback) {
         attributes: []
       });
 
-      // console.log(parameters);
-
-      var attr = Titanium.UI.iOS.createAttributedString(parameters);
+      var attr = ns.createAttributedString(parameters);
 
       callback(null, attr);
     }

@@ -3,7 +3,7 @@
 [![Dependencies](https://david-dm.org/fokkezb/ti-html2as/status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=dependencies)
 [![Dev Dependencies](https://david-dm.org/fokkezb/ti-html2as/dev-status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=devDependencies)
 
-HTML to [Ti.UI.iOS.AttributedString](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.iOS.AttributedString) parser for [Titanium](http://appcelerator.com/titanium).
+HTML to [Ti.UI.AttributedString](http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.AttributedString) parser for [Titanium](http://appcelerator.com/titanium).
 
 ## Screencast
 
@@ -14,7 +14,7 @@ A packaged *CommonJS* module can be found via [Releases](https://github.com/fokk
 
 	gittio install nl.fokkezb.html2as
 
-The module exports a single function that takes an HTML string and a callback to receive an error or [Ti.UI.iOS.AttributedString](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.iOS.AttributedString) object.
+The module exports a single function that takes an HTML string and a callback to receive an error or [Ti.UI.AttributedString](http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.AttributedString) object.
 
 ```
 var html2as = require('nl.fokkezb.html2as');
@@ -91,6 +91,7 @@ grunt
 
 ## Changelog
 
+* 1.3.0: Adds support for `Ti.UI.AttributedString`, backwards compatible with `Ti.UI.iOS.AttributedString`.
 * 1.2.0: Adds [support for HTML entities](https://github.com/FokkeZB/ti-html2as/pull/5)
 * 1.1.0: Updated for Titaniumifier 1.0.0
 * 1.0.0: Initial version
