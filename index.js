@@ -122,7 +122,10 @@ function walker(node, parameters, outerFont) {
   return parameters;
 }
 
-module.exports = function(html, callback) {
+module.exports = function(html, callback, showNewLines) {
+  if (typeof showNewLines === "undefined") {
+    showNewLines = false;
+  }
 
   var parser = new htmlparser.Parser(new htmlparser.DomHandler(function(error, dom) {
 
@@ -145,8 +148,10 @@ module.exports = function(html, callback) {
     }
   }));
   
-  // remove newlines
-  html = html.replace(/[\r\n]+/gm, ' ').replace(/\s+/g, ' ');
+  if (!showNewLines) {
+    // remove newlines
+    html = html.replace(/[\r\n]+/gm, ' ').replace(/\s+/g, ' ');
+  }
 
   parser.parseComplete(html);
 
