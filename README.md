@@ -91,6 +91,7 @@ grunt
 
 ## Changelog
 
+* 1.3.1: Fixes #21
 * 1.3.0: Adds support for `Ti.UI.AttributedString`, backwards compatible with `Ti.UI.iOS.AttributedString`.
 * 1.2.0: Adds [support for HTML entities](https://github.com/FokkeZB/ti-html2as/pull/5)
 * 1.1.0: Updated for Titaniumifier 1.0.0

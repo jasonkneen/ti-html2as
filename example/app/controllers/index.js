@@ -4,7 +4,7 @@ $.index.open();
 
 html2as(
   '<font size="20">\n' +
-  '<strong>strong</strong> or <b>b</b>\n' +
+  '<strong>strong</strong> or <b>b</b><br />\n' +
   '<u>u</u>\n' +
   '<strike>strike</strike> or <del>del</del> or <s>s</s>\n' +
   '<font face="AmericanTypewriter">font:face</font>\n' +

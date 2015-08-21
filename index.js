@@ -148,6 +148,9 @@ module.exports = function(html, callback) {
   // remove newlines
   html = html.replace(/[\r\n]+/gm, ' ').replace(/\s+/g, ' ');
 
+  // replace <br> with newlines
+  html = html.replace(/<br[^>]*>/gm, '\n');
+
   parser.parseComplete(html);
 
 };
