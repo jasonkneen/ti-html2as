@@ -1,7 +1,7 @@
 var htmlparser = require("htmlparser2");
 var entities = require("entities");
 
-var ns = Ti.UI.createAttributedString ? Ti.UI : Ti.UI.iOS;
+var ns = (parseInt(Ti.version.split('.')[0], 10) >= 4) ? Ti.UI : Ti.UI.iOS;
 
 function walker(node, parameters, outerFont) {
 
