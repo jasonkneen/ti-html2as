@@ -1,6 +1,6 @@
 {
   "name": "ti-html2as",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "HTML to Attributed String parser for Titanium",
   "titaniumManifest": {
     "guid": "5be532b5-9e73-4515-bd8e-5472b0bf52f2",
