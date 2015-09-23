@@ -1,6 +1,12 @@
 var htmlparser = require("htmlparser2");
 var entities = require("entities");
 
+// References to the full namespace to they get packaged for device builds
+var references = [
+  Ti.UI.iOS.AttributedString,
+  Ti.UI.AttributedString
+];
+
 var ns = (parseInt(Ti.version.split('.')[0], 10) >= 4) ? Ti.UI : Ti.UI.iOS;
 
 function walker(node, parameters, outerFont) {
