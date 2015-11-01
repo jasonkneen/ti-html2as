@@ -2,3 +2,4 @@
 node_modules
 example/build
 example/Resources
+.DS_Store
