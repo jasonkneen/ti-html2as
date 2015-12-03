@@ -44,7 +44,7 @@ html2as(
 
 ### Alloy
 
-In Alloy you can use the [XP.UI](https://github.com/FokkeZB/UTiL/tree/master/xp.ui#tag-label) CommonJS module to emulate the `html` attribute Android has for `<Label />`:
+In Alloy you can use the [XP.UI](https://github.com/FokkeZB/UTiL/blob/master/docs/xp.ui.md#tag-label) CommonJS module to emulate the `html` attribute Android has for `<Label />`:
 
 ```
 <Alloy>
