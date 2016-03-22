@@ -8,4 +8,6 @@ tmp
 .project
 .settings
 Thumbs.db
+i18n
+platform
 modules

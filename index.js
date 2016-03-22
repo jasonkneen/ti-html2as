@@ -13,6 +13,8 @@ if (parseInt(Ti.version.split('.')[0], 10) < 4) {
   ns = Ti.UI.iOS;
 }
 
+var ios = Ti.Platform.name === 'iPhone OS';
+
 function walker(node, parameters, outerFont) {
 
   if (node.type === 'text') {
@@ -71,11 +73,11 @@ function walker(node, parameters, outerFont) {
       } else if (node.name === 'u') {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_UNDERLINES_STYLE,
-          value: ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+          value: ios ? ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE : undefined,
           range: [offset, length]
         });
 
-      } else if (node.name === 'i' || node.name === 'em') {
+      } else if (ios && (node.name === 'i' || node.name === 'em')) {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_OBLIQUENESS,
           value: 0.25,
@@ -85,25 +87,25 @@ function walker(node, parameters, outerFont) {
       } else if (node.name === 'strike' || node.name === 'del' || node.name === 's') {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_STRIKETHROUGH_STYLE,
-          value: ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+          value: ios ? ns.ATTRIBUTE_UNDERLINE_STYLE_SINGLE : undefined,
           range: [offset, length]
         });
 
-      } else if (node.name === 'effect') {
+      } else if (ios && node.name === 'effect') {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_TEXT_EFFECT,
           value: ns.ATTRIBUTE_LETTERPRESS_STYLE,
           range: [offset, length]
         });
 
-      } else if (node.name === 'kern' && node.attribs && node.attribs.value) {
+      } else if (ios && node.name === 'kern' && node.attribs && node.attribs.value) {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_KERN,
           value: node.attribs.value,
           range: [offset, length]
         });
 
-      } else if (node.name === 'expansion' && node.attribs && node.attribs.value) {
+      } else if (ios && node.name === 'expansion' && node.attribs && node.attribs.value) {
         parameters.attributes.unshift({
           type: ns.ATTRIBUTE_EXPANSION,
           value: node.attribs.value,
@@ -154,7 +156,7 @@ module.exports = function(html, callback) {
       callback(null, attr);
     }
   }));
-  
+
   // remove newlines
   html = html.replace(/[\r\n]+/gm, ' ').replace(/\s+/g, ' ');
 

@@ -4,19 +4,21 @@ This widget wraps the [HTML to Attributed String Module](http://gitt.io/componen
 
 ## Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/nl.fokkezb.html2as.widget)
 
-Install via [gitTio](http://gitt.io/component/nl.fokkezb.html2as.widget):
+* Install via [gitTio](http://gitt.io/component/nl.fokkezb.html2as.widget):
 
-	$ gittio install nl.fokkezb.html2as.widget
+		$ gittio install nl.fokkezb.html2as.widget
+	
+	giTio will automatically install the [HTML2AS module](http://gitt.io/component/nl.fokkezb.html2as) the widget depends on.
 
-Or download a [release](https://github.com/FokkeZB/nl.fokkezb.html2as.widget/releases), extract it to your app's `app/widgets/nl.fokkezb.html2as.widget` folder and add the dependency to your `config.json`:
+* Or download a [release](https://github.com/FokkeZB/nl.fokkezb.html2as.widget/releases), extract it to your app's `app/widgets/nl.fokkezb.html2as.widget` folder and add the dependency to your `config.json`:
 
-	{
-		..
-		"dependencies": {
-		    "nl.fokkezb.html2as.widget": "*"
-		    ..
-		  }
-	}
+		{
+			..
+			"dependencies": {
+			    "nl.fokkezb.html2as.widget": "*"
+			    ..
+			  }
+		}
 	
 ## Use it
 
@@ -70,6 +72,10 @@ Apply properties to the label
 ### html
 
 Set or get the HTML property (on iOS parsed to Attributed String).
+
+## Known issues
+
+See the *Known issues* paragraph of the [Using basic HTML in Labels on iOS like Android](http://www.tidev.io/2014/11/13/using-basic-html-in-labels-on-ios-like-android/) article on tiDev.
 
 ## License
 

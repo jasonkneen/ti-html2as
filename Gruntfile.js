@@ -45,7 +45,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   grunt.registerTask('build', ['titaniumifier:module']);
-  grunt.registerTask('test', ['unzip:module', 'titanium:ios', 'clean:unzip']);
+  grunt.registerTask('update', ['unzip:module']);
+  grunt.registerTask('test', ['update', 'titanium:ios', 'clean:unzip']);
 
   grunt.registerTask('ios', ['clean', 'build', 'test']);
 

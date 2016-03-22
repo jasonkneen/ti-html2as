@@ -18,6 +18,7 @@ html2as(
   '<effect>effect</effect>\n' +
   '<kern value="10">kern:value</kern>\n' +
   '<expansion value="0.5">expansion:value</expansion>\n' +
+  'br<br />br<br>br\n' +
   '</font>',
   function(err, as) {
 

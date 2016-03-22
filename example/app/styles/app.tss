@@ -1,3 +1,3 @@
-"Window": {
+'Window[platform=ios]': {
   backgroundColor: 'white'
 }
