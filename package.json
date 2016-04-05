@@ -29,16 +29,22 @@
     "attributed",
     "string"
   ],
+  "scripts": {
+    "test": "istanbul cover jasmine"
+  },
   "dependencies": {
     "entities": "^1.1.1",
     "grunt-titaniumifier": "^1.1.0",
     "htmlparser2": "^3.8.0"
   },
   "devDependencies": {
+    "grunt": "^0.4.2",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-titanium": "fokkezb/grunt-titanium#patch-3",
     "grunt-titaniumifier": "^1.0.0-beta",
     "grunt-zip": "^0.16.0",
-    "grunt": "^0.4.2"
+    "istanbul": "^0.4.2",
+    "jasmine": "^2.4.1",
+    "proxyquire": "^1.7.4"
   }
 }
