@@ -51,7 +51,7 @@ In Alloy you can use the [XP.UI](https://github.com/FokkeZB/UTiL/blob/master/doc
 	<Window>
 		<Label module="xp.ui" html="<font size=17>Hello <b>Bold</b> <font color=#FF0000>World!</font></font>" />
 	</Window>
-</Alloy> 
+</Alloy>
 ```
 
 Or you can use the [Widget](https://github.com/FokkeZB/nl.fokkezb.html2as.widget), which has the advantage that you can set the `html` property in a later stage as well:
@@ -61,7 +61,7 @@ Or you can use the [Widget](https://github.com/FokkeZB/nl.fokkezb.html2as.widget
 	<Window>
 		<Widget src="nl.fokkezb.html2as.widget" html="<font size=17>Hello <b>Bold</b> <font color=#FF0000>World!</font></font>" />
 	</Window>
-</Alloy> 
+</Alloy>
 ```
 
 ## Supported tags and attributes
@@ -75,11 +75,64 @@ Standard (old) HTML:
 * `<font face="Arial" size="12" color="red">`
 * `<a href="http://appcelerator.com">`
 
-Non-standard: 
+Non-standard:
 
 * `<effect>` (letterpress-style)
 * `<kern value="10">` (spacing between characters)
 * `<expansion value="0.5">` (stretch text horizontally)
+
+## Custom matcher
+The optional custom matcher allows parsing of non-standard tags and attributes.
+
+The function needs to return an object containing two properties:
+
+* `parameters` {Object} the parameters property passed into the function with any additions
+* `continue` {Boolean} whether to continue through the default matchers
+
+### Custom matcher example
+To style H1 tags:
+
+```
+var customMatcher = function(node, parameters, outerFont, offset, length, ns) {
+  if (node.type === 'tag' && node.name && node.name === 'h1') {
+    parameters.attributes.unshift({
+      type: ns.ATTRIBUTE_FOREGROUND_COLOR,
+      value: Alloy.CFG.h1Color,
+      range: [offset, length]
+    });
+    parameters.attributes.unshift({
+      type: ns.ATTRIBUTE_FONT,
+      value: {
+        fontSize: Alloy.CFG.h1FontSize,
+        fontFamily: Alloy.CFG.h1FontFamily
+      },
+      range: [offset, length]
+    });
+  }
+
+  return {
+    parameters: parameters,
+    continue: true
+  };
+}
+
+var html2as = require('nl.fokkezb.html2as');
+
+html2as(
+	'<h1>Hello World</h1>',
+	function(err, as) {
+
+		if (err) {
+			console.error(err);
+		} else {
+			view.add(Titanium.UI.createLabel({
+				attributedString: as
+			}));
+		}
+	},
+	customMatcher
+);
+```
 
 ## Example
 The [example](example) folder includes a Titanium project demonstrating the module. To build the module and then run the example project use the included grunt tasks:

@@ -1,0 +1,248 @@
+module.exports = function() {
+  var TiSpy = jasmine.createSpyObj('TiSpy', [
+    'addEventListener',
+    'applyProperties',
+    'createBuffer',
+    'createProxy',
+    'fireEvent',
+    'getApiName',
+    'getBubbleParent',
+    'getBuildDate',
+    'getBuildHash',
+    'getLifecycleContainer',
+    'getUserAgent',
+    'getVersion',
+    'removeEventListener',
+    'setBubbleParent',
+    'setLifecycleContainer',
+    'setUserAgent'
+  ]);
+
+  TiSpy.version = '5.2.0';
+  TiSpy.Platform = {
+    name: 'iPhone OS'
+  };
+  TiSpy.iOS = {};
+
+  var TiUISpy = jasmine.createSpyObj('TiUISpy', [
+    'addEventListener',
+    'applyProperties',
+    'convertUnits',
+    'create2DMatrix',
+    'create3DMatrix',
+    'createActivityIndicator',
+    'createAlertDialog',
+    'createAnimation',
+    'createAttributedString',
+    'createButton',
+    'createButtonBar',
+    'createDashboardItem',
+    'createDashboardView',
+    'createEmailDialog',
+    'createImageView',
+    'createLabel',
+    'createListSection',
+    'createListView',
+    'createMaskedImage',
+    'createNotification',
+    'createOptionDialog',
+    'createPicker',
+    'createPickerColumn',
+    'createPickerRow',
+    'createProgressBar',
+    'createRefreshControl',
+    'createScrollView',
+    'createScrollableView',
+    'createSearchBar',
+    'createSlider',
+    'createSwitch',
+    'createTab',
+    'createTabGroup',
+    'createTableView',
+    'createTableViewRow',
+    'createTableViewSection',
+    'createTextArea',
+    'createTextField',
+    'createView',
+    'createWebView',
+    'createWindow',
+    'fireEvent',
+    'getApiName',
+    'getBackgroundColor',
+    'getBackgroundImage',
+    'getBubbleParent',
+    'getCurrentTab',
+    'getCurrentWindow',
+    'getLifecycleContainer',
+    'removeEventListener',
+    'setBackgroundColor',
+    'setBackgroundImage',
+    'setBubbleParent',
+    'setCurrentTab',
+    'setLifecycleContainer'
+  ]);
+
+  TiUISpy.ANIMATION_CURVE_EASE_IN = 65536;
+  TiUISpy.ANIMATION_CURVE_EASE_IN_OUT = 0;
+  TiUISpy.ANIMATION_CURVE_EASE_OUT = 131072;
+  TiUISpy.ANIMATION_CURVE_LINEAR = 196608;
+  TiUISpy.ATTRIBUTE_BACKGROUND_COLOR = 3;
+  TiUISpy.ATTRIBUTE_BASELINE_OFFSET = 16;
+  TiUISpy.ATTRIBUTE_EXPANSION = 20;
+  TiUISpy.ATTRIBUTE_FONT = 0;
+  TiUISpy.ATTRIBUTE_FOREGROUND_COLOR = 2;
+  TiUISpy.ATTRIBUTE_KERN = 5;
+  TiUISpy.ATTRIBUTE_LETTERPRESS_STYLE = '_UIKitNewLetterpressStyle';
+  TiUISpy.ATTRIBUTE_LIGATURE = 4;
+  TiUISpy.ATTRIBUTE_LINE_BREAK = 21;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_CHAR_WRAPPING = 1;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_CLIPPING = 2;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_HEAD = 3;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_MIDDLE = 5;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_TRUNCATING_TAIL = 4;
+  TiUISpy.ATTRIBUTE_LINE_BREAK_BY_WORD_WRAPPING = 0;
+  TiUISpy.ATTRIBUTE_LINK = 15;
+  TiUISpy.ATTRIBUTE_OBLIQUENESS = 19;
+  TiUISpy.ATTRIBUTE_SHADOW = 10;
+  TiUISpy.ATTRIBUTE_STRIKETHROUGH_COLOR = 18;
+  TiUISpy.ATTRIBUTE_STRIKETHROUGH_STYLE = 6;
+  TiUISpy.ATTRIBUTE_STROKE_COLOR = 8;
+  TiUISpy.ATTRIBUTE_STROKE_WIDTH = 9;
+  TiUISpy.ATTRIBUTE_TEXT_EFFECT = 13;
+  TiUISpy.ATTRIBUTE_UNDERLINES_STYLE = 7;
+  TiUISpy.ATTRIBUTE_UNDERLINE_BY_WORD = 32768;
+  TiUISpy.ATTRIBUTE_UNDERLINE_COLOR = 17;
+  TiUISpy.ATTRIBUTE_UNDERLINE_PATTERN_DASH = 512;
+  TiUISpy.ATTRIBUTE_UNDERLINE_PATTERN_DASH_DOT = 768;
+  TiUISpy.ATTRIBUTE_UNDERLINE_PATTERN_DASH_DOT_DOT = 1024;
+  TiUISpy.ATTRIBUTE_UNDERLINE_PATTERN_DOT = 256;
+  TiUISpy.ATTRIBUTE_UNDERLINE_PATTERN_SOLID = 0;
+  TiUISpy.ATTRIBUTE_UNDERLINE_STYLE_DOUBLE = 9;
+  TiUISpy.ATTRIBUTE_UNDERLINE_STYLE_NONE = 0;
+  TiUISpy.ATTRIBUTE_UNDERLINE_STYLE_SINGLE = 1;
+  TiUISpy.ATTRIBUTE_UNDERLINE_STYLE_THICK = 2;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION = 12;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION_EMBEDDING = 0;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION_LEFT_TO_RIGHT = 0;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION_NATURAL = -1;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION_OVERRIDE = 2;
+  TiUISpy.ATTRIBUTE_WRITING_DIRECTION_RIGHT_TO_LEFT = 1;
+  TiUISpy.AUTOLINK_ALL = 18446744073709552000;
+  TiUISpy.AUTOLINK_CALENDAR = 8;
+  TiUISpy.AUTOLINK_EMAIL_ADDRESSES = 2;
+  TiUISpy.AUTOLINK_MAP_ADDRESSES = 4;
+  TiUISpy.AUTOLINK_NONE = 0;
+  TiUISpy.AUTOLINK_PHONE_NUMBERS = 1;
+  TiUISpy.AUTOLINK_URLS = 2;
+  TiUISpy.EXTEND_EDGE_ALL = 15;
+  TiUISpy.EXTEND_EDGE_BOTTOM = 4;
+  TiUISpy.EXTEND_EDGE_LEFT = 2;
+  TiUISpy.EXTEND_EDGE_NONE = 0;
+  TiUISpy.EXTEND_EDGE_RIGHT = 8;
+  TiUISpy.EXTEND_EDGE_TOP = 1;
+  TiUISpy.FACE_DOWN = 6;
+  TiUISpy.FACE_UP = 5;
+  TiUISpy.FILL = 'FILL';
+  TiUISpy.INPUT_BORDERSTYLE_BEZEL = 2;
+  TiUISpy.INPUT_BORDERSTYLE_LINE = 1;
+  TiUISpy.INPUT_BORDERSTYLE_NONE = 0;
+  TiUISpy.INPUT_BORDERSTYLE_ROUNDED = 3;
+  TiUISpy.INPUT_BUTTONMODE_ALWAYS = 3;
+  TiUISpy.INPUT_BUTTONMODE_NEVER = 0;
+  TiUISpy.INPUT_BUTTONMODE_ONBLUR = 2;
+  TiUISpy.INPUT_BUTTONMODE_ONFOCUS = 1;
+  TiUISpy.INPUT_TYPE_CLASS_NUMBER = undefined;
+  TiUISpy.INPUT_TYPE_CLASS_TEXT = undefined;
+  TiUISpy.KEYBOARD_APPEARANCE_DARK = 1;
+  TiUISpy.KEYBOARD_APPEARANCE_DEFAULT = 0;
+  TiUISpy.KEYBOARD_APPEARANCE_LIGHT = 2;
+  TiUISpy.KEYBOARD_TYPE_ASCII = 1;
+  TiUISpy.KEYBOARD_TYPE_DECIMAL_PAD = 8;
+  TiUISpy.KEYBOARD_TYPE_DEFAULT = 0;
+  TiUISpy.KEYBOARD_TYPE_EMAIL = 7;
+  TiUISpy.KEYBOARD_TYPE_NAMEPHONE_PAD = 6;
+  TiUISpy.KEYBOARD_TYPE_NUMBERS_PUNCTUATION = 2;
+  TiUISpy.KEYBOARD_TYPE_NUMBER_PAD = 4;
+  TiUISpy.KEYBOARD_TYPE_PHONE_PAD = 5;
+  TiUISpy.KEYBOARD_TYPE_TWITTER = 9;
+  TiUISpy.KEYBOARD_TYPE_URL = 3;
+  TiUISpy.KEYBOARD_TYPE_WEBSEARCH = 10;
+  TiUISpy.LANDSCAPE_LEFT = 4;
+  TiUISpy.LANDSCAPE_RIGHT = 3;
+  TiUISpy.LIST_ACCESSORY_TYPE_CHECKMARK = 3;
+  TiUISpy.LIST_ACCESSORY_TYPE_DETAIL = 2;
+  TiUISpy.LIST_ACCESSORY_TYPE_DISCLOSURE = 1;
+  TiUISpy.LIST_ACCESSORY_TYPE_NONE = 0;
+  TiUISpy.LIST_ITEM_TEMPLATE_CONTACTS = 2;
+  TiUISpy.LIST_ITEM_TEMPLATE_DEFAULT = 0;
+  TiUISpy.LIST_ITEM_TEMPLATE_SETTINGS = 1;
+  TiUISpy.LIST_ITEM_TEMPLATE_SUBTITLE = 3;
+  TiUISpy.NOTIFICATION_DURATION_LONG = undefined;
+  TiUISpy.NOTIFICATION_DURATION_SHORT = undefined;
+  TiUISpy.PICKER_TYPE_COUNT_DOWN_TIMER = 3;
+  TiUISpy.PICKER_TYPE_DATE = 1;
+  TiUISpy.PICKER_TYPE_DATE_AND_TIME = 2;
+  TiUISpy.PICKER_TYPE_PLAIN = -1;
+  TiUISpy.PICKER_TYPE_TIME = 0;
+  TiUISpy.PORTRAIT = 1;
+  TiUISpy.RETURNKEY_CONTINUE = 11;
+  TiUISpy.RETURNKEY_DEFAULT = 0;
+  TiUISpy.RETURNKEY_DONE = 9;
+  TiUISpy.RETURNKEY_EMERGENCY_CALL = 10;
+  TiUISpy.RETURNKEY_GO = 1;
+  TiUISpy.RETURNKEY_GOOGLE = 2;
+  TiUISpy.RETURNKEY_JOIN = 3;
+  TiUISpy.RETURNKEY_NEXT = 4;
+  TiUISpy.RETURNKEY_ROUTE = 5;
+  TiUISpy.RETURNKEY_SEARCH = 6;
+  TiUISpy.RETURNKEY_SEND = 7;
+  TiUISpy.RETURNKEY_YAHOO = 8;
+  TiUISpy.SIZE = 'SIZE';
+  TiUISpy.TABLE_VIEW_SEPARATOR_STYLE_NONE = undefined;
+  TiUISpy.TABLE_VIEW_SEPARATOR_STYLE_SINGLE_LINE = undefined;
+  TiUISpy.TEXT_ALIGNMENT_CENTER = 1;
+  TiUISpy.TEXT_ALIGNMENT_LEFT = 0;
+  TiUISpy.TEXT_ALIGNMENT_RIGHT = 2;
+  TiUISpy.TEXT_AUTOCAPITALIZATION_ALL = 3;
+  TiUISpy.TEXT_AUTOCAPITALIZATION_NONE = 0;
+  TiUISpy.TEXT_AUTOCAPITALIZATION_SENTENCES = 2;
+  TiUISpy.TEXT_AUTOCAPITALIZATION_WORDS = 1;
+  TiUISpy.TEXT_ELLIPSIZE_TRUNCATE_END = 4;
+  TiUISpy.TEXT_ELLIPSIZE_TRUNCATE_MARQUEE = undefined;
+  TiUISpy.TEXT_ELLIPSIZE_TRUNCATE_MIDDLE = 5;
+  TiUISpy.TEXT_ELLIPSIZE_TRUNCATE_START = 3;
+  TiUISpy.TEXT_STYLE_BODY = 'UICTFontTextStyleBody';
+  TiUISpy.TEXT_STYLE_CAPTION1 = 'UICTFontTextStyleCaption1';
+  TiUISpy.TEXT_STYLE_CAPTION2 = 'UICTFontTextStyleCaption2';
+  TiUISpy.TEXT_STYLE_FOOTNOTE = 'UICTFontTextStyleFootnote';
+  TiUISpy.TEXT_STYLE_HEADLINE = 'UICTFontTextStyleHeadline';
+  TiUISpy.TEXT_STYLE_SUBHEADLINE = 'UICTFontTextStyleSubhead';
+  TiUISpy.TEXT_VERTICAL_ALIGNMENT_BOTTOM = 2;
+  TiUISpy.TEXT_VERTICAL_ALIGNMENT_CENTER = 0;
+  TiUISpy.TEXT_VERTICAL_ALIGNMENT_TOP = 1;
+  TiUISpy.UNIT_CM = 'cm';
+  TiUISpy.UNIT_DIP = 'dip';
+  TiUISpy.UNIT_IN = 'in';
+  TiUISpy.UNIT_MM = 'mm';
+  TiUISpy.UNIT_PX = 'px';
+  TiUISpy.UNKNOWN = 0;
+  TiUISpy.UPSIDE_PORTRAIT = 2;
+  TiUISpy.URL_ERROR_AUTHENTICATION = -1013;
+  TiUISpy.URL_ERROR_BAD_URL = -1000;
+  TiUISpy.URL_ERROR_CONNECT = -1004;
+  TiUISpy.URL_ERROR_FILE = -3001;
+  TiUISpy.URL_ERROR_FILE_NOT_FOUND = -1100;
+  TiUISpy.URL_ERROR_HOST_LOOKUP = -1003;
+  TiUISpy.URL_ERROR_REDIRECT_LOOP = -1007;
+  TiUISpy.URL_ERROR_SSL_FAILED = -1200;
+  TiUISpy.URL_ERROR_TIMEOUT = -1001;
+  TiUISpy.URL_ERROR_UNKNOWN = -1;
+  TiUISpy.URL_ERROR_UNSUPPORTED_SCHEME = -1002;
+
+  TiUISpy.AttributedString = '';
+
+  TiSpy.UI = TiUISpy;
+  TiSpy.UI.iOS = TiUISpy;
+
+  return TiSpy;
+};

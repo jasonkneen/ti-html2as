@@ -15,7 +15,33 @@ if (parseInt(Ti.version.split('.')[0], 10) < 4) {
 
 var ios = Ti.Platform.name === 'iPhone OS';
 
-function walker(node, parameters, outerFont) {
+// Custom matcher is a function to enable parsing of extra node types.
+// @return Object
+// @property parameters Object
+// @property continue Boolean
+// @example
+//   function(node, parameters, outerFont, offset, length, ns) {
+//     if (node.type === 'tag' && node.name && node.name === 'h1') {
+//       parameters.attributes.unshift({
+//         type: ns.ATTRIBUTE_FOREGROUND_COLOR,
+//         value: Alloy.CFG.h1Color,
+//         range: [offset, length]
+//       });
+//       parameters.attributes.unshift({
+//         type: ns.ATTRIBUTE_FONT,
+//         value: {
+//           fontSize: Alloy.CFG.h1FontSize,
+//           fontFamily: Alloy.CFG.h1FontFamily
+//         },
+//         range: [offset, length]
+//       });
+//     }
+//     return {
+//       parameters: parameters,
+//       continue: true
+//     };
+//   }
+function walker(node, parameters, outerFont, customMatcher) {
 
   if (node.type === 'text') {
     parameters.text += entities.decodeHTML(node.data);
@@ -54,11 +80,25 @@ function walker(node, parameters, outerFont) {
 
     // walk children
     node.children.forEach(function onEach(child) {
-      parameters = walker(child, parameters, innerFont);
+      parameters = walker(child, parameters, innerFont, customMatcher);
     });
 
     // calculate length of (grant)children text nodes
     var length = parameters.text.length - offset;
+
+    if (typeof customMatcher === 'function') {
+      var customMatch = customMatcher(node, parameters, outerFont, offset, length, ns);
+
+      if (customMatch.parameters === undefined || customMatch.continue === undefined) {
+        throw new Error('customMatcher should return an object with parameters and continue properties defined');
+      }
+
+      parameters = customMatch.parameters;
+
+      if (customMatch.continue === false) {
+        return parameters;
+      }
+    }
 
     // only apply attributes if we wrap text
     if (length > 0) {
@@ -119,23 +159,22 @@ function walker(node, parameters, outerFont) {
           range: [offset, length]
         });
       }
+    }
 
-      // if we have a font to set
-      if (innerFont) {
-        parameters.attributes.unshift({
-          type: ns.ATTRIBUTE_FONT,
-          value: innerFont,
-          range: [offset, length]
-        });
-      }
+    // if we have a font to set
+    if (innerFont) {
+      parameters.attributes.unshift({
+        type: ns.ATTRIBUTE_FONT,
+        value: innerFont,
+        range: [offset, length]
+      });
     }
   }
 
   return parameters;
 }
 
-module.exports = function(html, callback) {
-
+module.exports = function(html, callback, customMatcher) {
   var parser = new htmlparser.Parser(new htmlparser.DomHandler(function(error, dom) {
 
     if (error) {
@@ -149,7 +188,7 @@ module.exports = function(html, callback) {
       }, {
         text: '',
         attributes: []
-      });
+    }, null, customMatcher);
 
       var attr = ns.createAttributedString(parameters);
 
