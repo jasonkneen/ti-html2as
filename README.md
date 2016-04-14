@@ -1,7 +1,7 @@
 # HTML to Attributed String
 
 [![Dependencies](https://david-dm.org/fokkezb/ti-html2as/status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=dependencies)
-[![Dev Dependencies](https://david-dm.org/fokkezb/ti-html2as/dev-status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=devDependencies)
+[![Dev Dependencies](https://david-dm.org/fokkezb/ti-html2as/dev-status.svg?style=flat-square)](https://david-dm.org/fokkezb/ti-html2as#info=devDependencies) [![Build Status](https://travis-ci.org/FokkeZB/ti-html2as.svg?branch=master)](https://travis-ci.org/FokkeZB/ti-html2as)
 
 HTML to [Ti.UI.AttributedString](http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.AttributedString) parser for [Titanium](http://appcelerator.com/titanium).
 
