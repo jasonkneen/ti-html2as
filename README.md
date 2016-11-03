@@ -81,7 +81,7 @@ Hyperlink color:
 
 Adding html to string.xml with CDATA:
 
-`<string name="setup_para"><![CDATA[<a color="#FFFFFF" href="https://github.com/FokkeZB/ti-html2as">html2as</a>.]]></string>`
+`<string name="intro"><![CDATA[<a color="#FFFFFF" href="https://github.com/FokkeZB/ti-html2as">html2as</a>.]]></string>`
 
 Non-standard:
 
