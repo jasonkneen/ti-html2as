@@ -117,6 +117,7 @@ describe('html2as - standard functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion>';
@@ -228,6 +229,7 @@ describe('html2as - standard functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion>';
@@ -319,6 +321,7 @@ describe('html2as - standard functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion>';
@@ -531,6 +534,7 @@ describe('html2as - custom functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion><br>' +
@@ -651,6 +655,7 @@ describe('html2as - custom functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion><br>' +
@@ -693,6 +698,7 @@ describe('html2as - custom functioinality -', function() {
       '<font size="12">Font size 12 Text</font><br>' +
       '<font color="red">Red Text</font><br>' +
       '<a href="https://github.com/FokkeZB/ti-html2as">Anchor</a><br>' +
+      '<a color="red" href="https://github.com/FokkeZB/ti-html2as">Anchor Color</a><br>' +
       '<effect>Letterpress Text</effect><br>' +
       '<kern value="10">Kerned Text</kern><br>' +
       '<expansion value="0.5">Expanded Text</expansion><br>' +
