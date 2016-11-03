@@ -75,6 +75,10 @@ Standard (old) HTML:
 * `<font face="Arial" size="12" color="red">`
 * `<a href="http://appcelerator.com">`
 
+Hyperlink color:
+
+* `<a color="red" href="http://appcelerator.com">`
+
 Non-standard:
 
 * `<effect>` (letterpress-style)
