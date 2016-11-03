@@ -79,6 +79,9 @@ Hyperlink color:
 
 * `<a color="red" href="http://appcelerator.com">`
 
+Adding html to string.xml with CDATA
+`<string name="setup_para"><![CDATA[<a color="#FFFFFF" href="https://github.com/FokkeZB/ti-html2as">html2as</a>.]]></string>`
+
 Non-standard:
 
 * `<effect>` (letterpress-style)

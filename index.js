@@ -104,19 +104,31 @@ function walker(node, parameters, outerFont, customMatcher) {
     if (length > 0) {
 
       if (node.name === 'a' && node.attribs && node.attribs.href) {
-        parameters.attributes.unshift({
+        
+        var linkAtributes = [{
             type: ns.ATTRIBUTE_LINK,
             value: node.attribs.href,
             range: [offset, length]
-        }, {
-          type : ns.ATTRIBUTE_FOREGROUND_COLOR,
-          value : node.attribs.color,
-          range: [offset, length]
-        }, {
-          type : ns.ATTRIBUTE_UNDERLINE_COLOR,
-          value : node.attribs.color,
-          range: [offset, length]
-        });
+        }];
+
+        // check if node has a color set
+        if(node.attribs.color){
+
+          linkAtributes.push({
+            type : ns.ATTRIBUTE_FOREGROUND_COLOR,
+            value : node.attribs.color,
+            range: [offset, length]
+          });
+
+          linkAtributes.push({
+            type : ns.ATTRIBUTE_UNDERLINE_COLOR,
+            value : node.attribs.color,
+            range: [offset, length]
+          });
+
+        }
+
+        parameters.attributes.unshift(linkAtributes);
 
       } else if (node.name === 'u') {
         parameters.attributes.unshift({
