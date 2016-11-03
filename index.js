@@ -105,8 +105,16 @@ function walker(node, parameters, outerFont, customMatcher) {
 
       if (node.name === 'a' && node.attribs && node.attribs.href) {
         parameters.attributes.unshift({
-          type: ns.ATTRIBUTE_LINK,
-          value: node.attribs.href,
+            type: ns.ATTRIBUTE_LINK,
+            value: node.attribs.href,
+            range: [offset, length]
+        }, {
+          type : ns.ATTRIBUTE_FOREGROUND_COLOR,
+          value : node.attribs.color,
+          range: [offset, length]
+        }, {
+          type : ns.ATTRIBUTE_UNDERLINE_COLOR,
+          value : node.attribs.color,
           range: [offset, length]
         });
 
