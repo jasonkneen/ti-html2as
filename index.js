@@ -13,7 +13,7 @@ if (parseInt(Ti.version.split('.')[0], 10) < 4) {
   ns = Ti.UI.iOS;
 }
 
-var ios = Ti.Platform.name === 'iPhone OS';
+var ios = Ti.Platform.name === 'iPhone OS' || Ti.Platform.name === 'iOS';
 
 // Custom matcher is a function to enable parsing of extra node types.
 // @return Object
