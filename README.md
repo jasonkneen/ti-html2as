@@ -75,6 +75,14 @@ Standard (old) HTML:
 * `<font face="Arial" size="12" color="red">`
 * `<a href="http://appcelerator.com">`
 
+Hyperlink color:
+
+* `<a color="red" href="http://appcelerator.com">`
+
+Adding html to strings.xml with CDATA:
+
+* `<string name="intro"><![CDATA[<a color="#FFFFFF" href="https://github.com/FokkeZB/ti-html2as">html2as</a>.]]></string>`
+
 Non-standard:
 
 * `<effect>` (letterpress-style)
